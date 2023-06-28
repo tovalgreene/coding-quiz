@@ -14,3 +14,6 @@ THEN time is subtracted from the clock
 WHEN all questions are answered or the timer reaches 0
 THEN the game is over
 WHEN the game is over
+
+## Credit
+Questions and answers provided by: https://quizlet.com/vn/458713582/javascript-flash-cards/. 
