@@ -1,14 +1,16 @@
 //Connect to HTML -- getElementbyID
-var timerEl = document.getElementById("timer");
-var questionsEl = document.getElementById("quiz-questions");
-var choicesEl = document.getElementById("quiz-choices");
-var verdictEl = document.getElementById("quiz-verdict");
-var userinitialsEl = document.getElementById("user-initials");
+var timerElement = document.getElementById("timer");
+var questionsElement = document.getElementById("quiz-questions");
+var choicesElement = document.getElementById("quiz-choices");
+var verdictElement = document.getElementById("quiz-verdict");
+var userinitialsElement = document.getElementById("user-initials");
 
-var quizStartButton = document.getElementById("quiz-start-button");
-var quizSaveButton = document.getElementById("quiz-save-button");
+var startbutton = document.getElementById("quiz-start-button");
+var savebutton = document.getElementById("quiz-save-button");
 
-//Write storage variables (timer, etc)
+//Write timer variable:
+var timer;
+var timerCount = 75;
 
 //Write array for questions
 var quizquestions = [
@@ -49,15 +51,23 @@ var quizquestions = [
     },
 ]
 
-//Add event listeners to start & save quiz
-quizStartButton.addEventListener("click", startQuiz);
-quizSaveButton.addEventListener("click", saveScore);
-
 /*Write functions:
 - start the quiz*/
 function startQuiz() {
+    timer = setInterval(function() {
+        timerCount--;
+        timerElement.textContent = timerCount;
 
+        if (timerCount <= 0 || questionindex === quizquestions.length) {
+                endQuiz();
+        }
+     }, 1000); 
+    
+    questionAppear();
 }
+
+//Add event listener to start quiz
+startbutton.addEventListener("click", startQuiz);
 
 //- each question appears
 function questionAppear() {
@@ -72,5 +82,11 @@ function verifyAnswer() {
 function endQuiz() {
 
 }
+
 //- function to save score
-function saveScore() {}
+function saveQuiz() {
+
+}
+
+//event listener for save button
+savebutton.addEventListener("click", saveQuiz);
