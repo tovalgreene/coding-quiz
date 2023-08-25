@@ -93,9 +93,23 @@ function questionAppear() {
     });
 }
 //- function to check each question (verify the answers)
-function verifyAnswer() {
+function verifyAnswer(event) {
+    var selectedAnswer = event.target.getAttribute("data-answer");
+    var correctAnswer = quizquestions[questionIndex].answer;
 
+    if (selectedAnswer === correctAnswer) {
+        verdictElement.textContent = "You're right!";
+    } else {
+        verdictElement.textContent = "Sorry, you're incorrect.";
+        timerCount -= 10;
+        if (timerCount < 0) {
+            timerCount = 0;
+        }
+        timerElement.textContent = timerCount;
+    }
 }
+
+questionIndex++;
 
 //- function to end quiz
 function endQuiz() {
