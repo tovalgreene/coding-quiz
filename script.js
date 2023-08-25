@@ -12,6 +12,9 @@ var savebutton = document.getElementById("quiz-save-button");
 var timer;
 var timerCount = 75;
 
+//Keep track of current question index
+var questionIndex = 0;
+
 //Write array for questions
 var quizquestions = [
     {
@@ -58,7 +61,7 @@ function startQuiz() {
         timerCount--;
         timerElement.textContent = timerCount;
 
-        if (timerCount <= 0 || questionindex === quizquestions.length) {
+        if (timerCount <= 0 || questionIndex === quizquestions.length) {
                 endQuiz();
         }
      }, 1000); 
@@ -71,7 +74,23 @@ startbutton.addEventListener("click", startQuiz);
 
 //- each question appears
 function questionAppear() {
+    var currentQuestion = quizquestions[questionIndex];
 
+    questionsElement.textContent = currentQuestion.question;
+    choicesElement.innerHTML = "";
+
+    for (var i=0; i < currentQuestion.choices.length; i++) {
+        var choiceButton = document.createElement("button");
+        choiceButton.textContent = currentQuestion.choices[i];
+        choiceButton.setAttribute("class", "choice");
+        choiceButton.setAttribute("data-answer", currentQuestion.choices[i]);
+        choicesElement.appendChild(choiceButton);
+    }
+
+    var choiceButtons = document.querySelectorAll(".choice");
+    choiceButtons.forEach(function(button) {
+        button.addEventListener("click", verifyAnswer);
+    });
 }
 //- function to check each question (verify the answers)
 function verifyAnswer() {
