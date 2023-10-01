@@ -30,13 +30,8 @@ h2 {
 }
 
 #quiz-choices button {
-    display: block;
     margin: 5px auto;
     background: #e8491d;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 #quiz-choices button:hover {
@@ -49,13 +44,13 @@ h2 {
     font-weight: bold;
 }
 
-#user-initials, #intials {
+#user-initials, #initials { 
     display: block;
     width: 100%;
     margin-bottom: 20px;
 }
 
-#intials {
+#initials { 
     padding: 10px;
     font-size: 16px;
 }
