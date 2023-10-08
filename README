@@ -1,14 +1,14 @@
 ## JavaScript Fundamentals Quiz
 
-## Description
+# Description
 This application is a timed quiz focusing on JavaScript fundamentals. It is designed to help coding boot camp students gauge their progress and compare their understanding and speed with peers. The user has a set amount of time to answer all questions, and the remaining time at the end serves as their score, allowing them to gauge their knowledge and speed against their peers.
 
-## User Story
+# User Story
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 
-## Acceptance Criteria
+# Acceptance Criteria
 GIVEN I am taking a code quiz
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
@@ -21,8 +21,8 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 
-## Features
+# Features
 Features include a Start Quiz button to begin the quiz, timed quiz questions on JavaScript fundamentals, a final score based on the remaining time after completing the quiz, and an option to save initials and scores for comparison.
 
-## Credits
+# Credits
 Questions and answers provided by Quizlet (https://quizlet.com/vn/458713582/javascript-flash-cards/).
